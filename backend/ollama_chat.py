@@ -55,7 +55,7 @@ def get_ollama_models():
     response.raise_for_status()
 
     data = response.json()
-    print(data)
+    # print(data)
     models = data.get("models", [])
 
     return [model["name"] for model in models]

@@ -13,15 +13,15 @@ app = FastAPI(
 )
 
 # 브라우저는 보안상 서로 다른 출처의 요청을 제한하기 때문에 설정 필요
-# app.add_middleware(
-#     CORSMiddleware,
-#     # allow_origins=["*"],    
-#     allow_origins=["http://localhost:5173"],
-#     # allow_origins=["http://localhost:5173", "https://example.com"] 
-#     allow_credentials=True,
-#     allow_methods=["*"],
-#     allow_headers=["*"],
-# )
+app.add_middleware(
+    CORSMiddleware,
+    # allow_origins=["*"],    
+    allow_origins=["http://localhost:5173"],
+    # allow_origins=["http://localhost:5173", "https://example.com"] 
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 # /chat API 구현
 # http://localhost:8000/chat
@@ -59,7 +59,7 @@ def list_models():
     try:
         print("진입")
         models = get_ollama_models()
-        print(models)
+        # print(models)
         return {"models": models}
     except Exception as exc:
         raise HTTPException(
