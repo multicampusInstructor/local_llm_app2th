@@ -42,7 +42,7 @@ function ChatWindow({
         <header className="chat-header">
           <div>
             <p className="eyebrow">FastAPI + Ollama</p>
-            <h2>로컬 AI 채팅</h2>
+            <h2>로컬 AI 채팅_LEO</h2>
           </div>
           <button type="button" className="clear-button" onClick={onClear}>
             대화 초기화
